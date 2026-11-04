@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Lora:ital@0;1&family=Pacifico&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgm" src="song1.mp3" loop preload="auto"></audio>
+<button id="musicBtn" aria-label="Play or pause song"><span>&#9835;</span> <span id="musicTxt">Play Song</span></button>
+<div id="sparkles" aria-hidden="true"></div>
+
+<!-- 1. HOME -->
+<section class="screen active" data-type="home">
+  <div class="inner">
+    <h1 class="hb">Happy Birthday</h1>
+    <h2 class="name" data-name>Her Name</h2>
+    <p class="lead">Some wishes are too big for a simple text, so I made you a little world instead. Take your time, it is all for you.</p>
+    <button class="btn" data-next>Open the Surprise</button>
+  </div>
+</section>
+
+<!-- 2. LETTER 1 -->
+<section class="screen" data-type="letter">
+  <div class="envelope"><div class="env-body"></div><div class="flap"></div><div class="seal">&#9825;</div></div>
+  <article class="paper">
+    <h3 class="ltitle">A Letter For You</h3>
+    <p>Dear <span data-name>Her Name</span>,</p>
+    <p>I do not know how to start this, so I will just say it simply. Today is your day, and I wanted to be a small part of it, even if only through a screen.</p>
+    <p>In my eyes, you are someone who makes ordinary days feel softer. Your smile, the way you carry yourself, the calm you bring without even trying. These are things I notice, and quietly cherish.</p>
+    <p>All I want is for you to be happy, always. May this birthday be gentle with you, may the year ahead bring you everything you have been silently hoping for, and may you stay well, every single day of your life.</p>
+    <p class="sign">With all my best wishes,<br><span data-sender>Your Name</span></p>
+    <button class="btn next" data-next>Next</button>
+  </article>
+</section>
+
+<!-- 3. REEL 1 -->
+<section class="screen" data-type="reel">
+  <div class="inner">
+    <p class="cap">Something I made for you</p>
+    <div class="reel"><video src="video1.mp4" playsinline preload="auto"></video></div>
+    <button class="btn next hidden" data-next>Next</button>
+  </div>
+</section>
+
+<!-- 4. LETTER 2 : UNSAID WORDS -->
+<section class="screen" data-type="letter">
+  <div class="envelope"><div class="env-body"></div><div class="flap"></div><div class="seal">&#9825;</div></div>
+  <article class="paper">
+    <h3 class="ltitle">Unsaid Words</h3>
+    <p>There are things I never found the courage to say out loud, so I am writing them here, where they can stay safe.</p>
+    <p>Maybe we do not talk much, and that is okay. Some people matter without needing a conversation to prove it. You are one of them for me.</p>
+    <p>I do not expect anything in return. I just wanted you to know that somewhere, someone is genuinely happy that you exist.</p>
+    <p class="note">Wishing you a birthday full of laughter, love, and every little thing that makes you smile. Stay the way you are.</p>
+    <p class="sign">Always wishing you well,<br><span data-sender>Your Name</span></p>
+    <button class="btn next" data-next>Next</button>
+  </article>
+</section>
+
+<!-- 5. PHOTOS -->
+<section class="screen" data-type="photos">
+  <div class="inner wide">
+    <h1 class="hb">Happy Birthday</h1>
+    <h2 class="name" data-name>Her Name</h2>
+    <div class="grid">
+      <figure><img src="image1.jpg" alt="Photo 1"><figcaption>Elegance</figcaption></figure>
+      <figure><img src="image2.jpg" alt="Photo 2"><figcaption>Grace</figcaption></figure>
+      <figure><img src="image3.jpg" alt="Photo 3"><figcaption>Radiance</figcaption></figure>
+      <figure><img src="image4.jpg" alt="Photo 4"><figcaption>Serenity</figcaption></figure>
+    </div>
+    <button class="btn" data-next>Next</button>
+  </div>
+</section>
+
+<!-- 6. REEL 2 -->
+<section class="screen" data-type="reel">
+  <div class="inner">
+    <p class="cap">One more moment</p>
+    <div class="reel"><video src="video2.mp4" playsinline preload="auto"></video></div>
+    <button class="btn next hidden" data-next>Next</button>
+  </div>
+</section>
+
+<!-- 7. THANK YOU -->
+<section class="screen" data-type="end">
+  <div class="inner">
+    <h1 class="hb">Thank You</h1>
+    <p class="lead">Thank you for spending your time, all the way to the very end.</p>
+    <p class="lead small">It truly means a lot that you stayed till the last page. Whatever this year brings, I hope it brings you only the best. Happy Birthday once again, <span data-name>Her Name</span>.</p>
+    <button class="btn" data-next>One Last Thing</button>
+    <button class="btn ghost" id="backBtn">Back to Wish Page</button>
+  </div>
+</section>
+
+<!-- 8. THE QUESTION -->
+<section class="screen" data-type="ask">
+  <div class="inner">
+    <p class="cap">One small question</p>
+    <h1 class="ask-title">Will you unblock me?</h1>
+    <p class="lead small">There is no pressure at all. Whatever your answer is, I will respect it.</p>
+    <div class="row">
+      <button class="btn" id="yesBtn">Yes</button>
+      <button class="btn ghost" id="noBtn">No</button>
+    </div>
+  </div>
+</section>
+
+<!-- 9. YES -->
+<section class="screen" data-type="yes">
+  <div class="inner">
+    <h1 class="yes-title">Wow, that's great!</h1>
+    <p class="lead">Thank you so much. This genuinely made my day, and I promise to be thoughtful and respectful.</p>
+    <form class="msgform" data-answer="YES">
+      <label for="yesMsg">Leave me a message if you like</label>
+      <textarea id="yesMsg" rows="4" placeholder="Type your message here..." required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+      <p class="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- 10. NO -->
+<section class="screen" data-type="no">
+  <div class="inner">
+    <div class="cry" aria-hidden="true"><span class="face">&#128546;</span><i></i><i></i></div>
+    <h1 class="no-title">That's okay.</h1>
+    <p class="lead">I understand, and I respect your decision. If you ever feel like telling me where I went wrong, I am here to listen and to learn.</p>
+    <form class="msgform" data-answer="NO">
+      <label for="noMsg">Where did I go wrong? (only if you want to share)</label>
+      <textarea id="noMsg" rows="4" placeholder="Type your message here..." required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+      <p class="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
